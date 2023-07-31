@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.bharathkrishna.whatsnext.adapters.RecyclerviewAdaptor;
 import com.bharathkrishna.whatsnext.helperclasses.DatabaseHelper;
@@ -52,7 +53,7 @@ public class TodoActivity extends AppCompatActivity {
         });
 
         recyclerviewAdaptor = new RecyclerviewAdaptor(this, taskHelperList);
-        RecyclerView.LayoutManager layoutManager =new GridLayoutManager(this,2, GridLayoutManager.VERTICAL, false);
+        RecyclerView.LayoutManager layoutManager =new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         todo_recyclerview.setLayoutManager(layoutManager);
         todo_recyclerview.setItemAnimator(new DefaultItemAnimator());
         todo_recyclerview.setAdapter(recyclerviewAdaptor);
